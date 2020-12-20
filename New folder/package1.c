@@ -74,14 +74,14 @@ void solvesudoku(int r,int c)
 }
 int main()
 {
-int r,c;
-printf("Enter the desired sudoku and enter 0 for unknown entries\n");
-for(r=0;r<9;r++)
-{
-    for(c=0;c<9;c++)
+    int r,c;
+    printf("Enter the desired sudoku and enter 0 for unknown entries\n");
+    for(r=0;r<9;r++)
     {
-        scanf("%d",&sudoku[r][c]);
+        for(c=0;c<9;c++)
+        {
+            scanf("%d",&sudoku[r][c]);
+        }
     }
-}
-solvesudoku(0,0);
+    solvesudoku(0,0);
 }
