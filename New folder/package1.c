@@ -32,7 +32,7 @@ int checkgrid(int r,int c,int n)
 return 1;
     }
 }
-void navigate(int r,int c)
+void move(int r,int c)
 {
     if(c<8)
         solvesudoku(r,c+1);
@@ -57,7 +57,7 @@ void solvesudoku(int r,int c)
     if(r>8)
     display();
     if(sudoku[r][c]!=0)
-    navigate(r,c);
+    move(r,c);
     else
     {
         int counter;
@@ -66,7 +66,7 @@ void solvesudoku(int r,int c)
             if((checkrow(r,counter)==1)&&(checkcolumn(c,counter)==1)&&(checkgrid(r,c,counter)==1))
             {
                 sudoku[r][c]=counter;
-                 navigate(r,c);
+                 move(r,c);
             }
         }
     }
